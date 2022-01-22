@@ -1,6 +1,4 @@
-//
-// Created by Siva Ganesh on 22-01-2022.
-//
+
 #include<bits/stdc++.h>
 using namespace std;
 bool comp(string a, string b){
