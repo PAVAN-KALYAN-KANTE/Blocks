@@ -4,6 +4,7 @@ signed main(){
     int n;
     cin>>n;
     //hello
+    //world
     int arr[n];
     for(auto &i:arr){
         cin>>i;
