@@ -3,13 +3,14 @@ using namespace std;
 signed main(){
     int n;
     cin>>n;
+    //hello
     int arr[n];
     for(auto &i:arr){
         cin>>i;
     }
     int target;
     cin>>target;
-
+    //hi there
     sort(arr,arr+n);
     int left=0,right=n-1;
     while(left<right){
