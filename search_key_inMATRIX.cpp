@@ -11,7 +11,7 @@ signed main(){
 	}
 	int x;
 	cin>>x;
-    
+
     //start from right top corner of matrix
 	int idx1=0,idx2=m-1;
 	bool flag=false;
@@ -29,4 +29,6 @@ signed main(){
 	}
 	
 	flag==true?cout<<1<<endl : cout<<0<<endl;
+
+    //time complexity O(n+m)
 }
