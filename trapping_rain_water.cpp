@@ -8,7 +8,7 @@ signed main(){
 		cin>>i;
 	}
 	int left[n],right[n];
-	left[0]=arr[0],right[n-1]=arr[n-1];
+	left[0]=0,right[n-1]=0;
 	for(int i=1;i<n;i++){
 		left[i]=max(arr[i-1],left[i-1]);
 	}
