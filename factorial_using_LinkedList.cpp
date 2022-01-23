@@ -10,7 +10,7 @@ class node{
 		prev=NULL;
 	}
 };
- void print(node* tail){
+void print(node* tail){
 
     if(tail==NULL){
         return;
@@ -18,7 +18,7 @@ class node{
     print(tail->prev);
     cout<<tail->data;
  	
- }
+}
 
 node* multipy(node* tail,int n){
 	int carry=0;
