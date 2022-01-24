@@ -7,7 +7,7 @@ typedef complex<ld> cd;
 typedef pair<int, int> pi;
 typedef pair<ll, ll> pl;
 typedef pair<ld, ld> pd;
-//
+
 typedef vector<int> vi;
 typedef vector<ld> vd;
 typedef vector<ll> vl;
@@ -67,6 +67,70 @@ vector<int> primes() {
     }
     return prime;
 }
+//3-3
+string make_string_3_3(const string& a,const string& b){
+    string res;
+    if(find(res.begin(),res.end(),a[0])==res.end()){
+        res+=a[0];
+    }
+    if(find(res.begin(),res.end(),a[1])==res.end()){
+        res+=a[1];
+    }
+    if(find(res.begin(),res.end(),b[0])==res.end()){
+        res+=b[0];
+    }
+    if(find(res.begin(),res.end(),b[1])==res.end()){
+        res+=b[1];
+    }
+    if(find(res.begin(),res.end(),b[2])==res.end()){
+        res+=b[2];
+    }
+    if(find(res.begin(),res.end(),a[2])==res.end()){
+        res+=a[2];
+    }
+    sort(res.begin(),res.end());
+    return res;
+}
+//2-3
+string make_string_2_3(const string& a,const string& b){
+    string res;
+    if(find(res.begin(),res.end(),a[0])==res.end()){
+        res+=a[0];
+    }
+    if(find(res.begin(),res.end(),a[1])==res.end()){
+        res+=a[1];
+    }
+    if(find(res.begin(),res.end(),b[0])==res.end()){
+        res+=b[0];
+    }
+    if(find(res.begin(),res.end(),b[1])==res.end()){
+        res+=b[1];
+    }
+    if(find(res.begin(),res.end(),b[2])==res.end()){
+        res+=b[2];
+    }
+    sort(res.begin(),res.end());
+    return res;
+}
+//1-3
+string make_string_1_3(const string& a,const string& b){
+    string res;
+    if(find(res.begin(),res.end(),a[0])==res.end()){
+        res+=a[0];
+    }
+    if(find(res.begin(),res.end(),b[1])==res.end()){
+        res+=b[1];
+    }
+    if(find(res.begin(),res.end(),b[0])==res.end()){
+        res+=b[0];
+    }
+    if(find(res.begin(),res.end(),b[2])==res.end()){
+        res+=b[2];
+    }
+    sort(res.begin(),res.end());
+    return res;
+}
+//2-2
 string make_string(const string& a,const string& b){
     string res;
     if(find(res.begin(),res.end(),a[0])==res.end()){
@@ -120,16 +184,17 @@ int main() {
         }
         //1-2
         for (int j = 0; j < two_size; ++j) {
-            if(make_string(one[i].first,two[j].first)=="ABC"){
+            string temp=one[i].first+two[j].first;
+            sort(temp.begin(), temp.end());
+            if(temp=="ABC"){
                 res=min(res,c[one[i].second]+c[two[j].second]);
             }
         }
         //1-3
         for (int j = 0; j <three_size; ++j) {
-            if(make_string(one[i].first,three[j].first)=="ABC"){
+            if(make_string_1_3(one[i].first,three[j].first)=="ABC"){
                 res=min(res,c[one[i].second]+c[three[j].second]);
             }
-
         }
     }
     //2-2
@@ -145,7 +210,7 @@ int main() {
         }
         //2-3
         for (int k = j; k < three_size; ++k) {
-            if(make_string(two[j].first,three[k].first)=="ABC"){
+            if(make_string_2_3(two[j].first,three[k].first)=="ABC"){
                 res=min(res,c[two[j].second]+c[three[k].second]);
             }
         }
@@ -154,7 +219,7 @@ int main() {
     for (int j = 0; j <three_size; ++j) {
         //3-3
         for (int k = j; k < three_size; ++k) {
-            if(make_string(three[j].first,three[k].first)=="ABC"){
+            if(make_string_3_3(three[j].first,three[k].first)=="ABC"){
                 res=min(res,c[three[j].second]+c[three[k].second]);
             }
         }
@@ -166,7 +231,4 @@ int main() {
     cout<<res<<endl;
 
 
-}//
-// Created by Siva Ganesh on 24-01-2022.
-//
-
+}
