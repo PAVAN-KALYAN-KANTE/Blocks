@@ -7,7 +7,7 @@ typedef complex<ld> cd;
 typedef pair<int, int> pi;
 typedef pair<ll, ll> pl;
 typedef pair<ld, ld> pd;
-
+//
 typedef vector<int> vi;
 typedef vector<ld> vd;
 typedef vector<ll> vl;
